@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kira × Arden — Suitability by Initiative</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #f8f9fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 50px 40px;
+  }
+
+  .section-header {
+    margin-bottom: 28px;
+  }
+  .section-header .label {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #00bfa5;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .section-header h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0f1629;
+  }
+
+  /* --- EXPLAINER --- */
+  .suit-explainer {
+    background: #fff;
+    border-radius: 10px;
+    padding: 22px 28px;
+    margin-bottom: 32px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    display: flex;
+    gap: 28px;
+    align-items: center;
+  }
+  .suit-explainer-text {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.65;
+    flex: 1;
+  }
+  .suit-explainer-text strong { color: #0f1629; }
+  .suit-explainer-bar {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  .suit-explainer-bar .bar-demo {
+    width: 160px;
+    height: 10px;
+    background: #e8ecf1;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .suit-explainer-bar .bar-demo-fill {
+    height: 100%;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #00bfa5, #00d4b8);
+  }
+  .suit-explainer-bar .bar-demo-label {
+    font-size: 11px;
+    color: #999;
+  }
+
+  /* --- CATEGORIES --- */
+  .suit-section {
+    margin: 30px 0 0;
+  }
+  .suit-category {
+    margin-bottom: 40px;
+  }
+  .suit-category-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f1629;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e0e4ea;
+    margin-bottom: 4px;
+    letter-spacing: 0.3px;
+  }
+
+  /* --- PROGRESS BAR ROWS --- */
+  .pb-row {
+    display: grid;
+    grid-template-columns: 2.2fr 1.6fr 2.8fr;
+    gap: 16px;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid #eef0f4;
+  }
+  .pb-row:last-child { border-bottom: none; }
+
+  .pb-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.3;
+  }
+  .pb-phase {
+    font-size: 11px;
+    color: #999;
+    margin-top: 2px;
+  }
+
+  .pb-bar-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .pb-track {
+    flex: 1;
+    height: 12px;
+    background: #e8ecf1;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .pb-fill {
+    height: 100%;
+    border-radius: 6px;
+  }
+  .pb-fill.tier-high {
+    background: linear-gradient(90deg, #00bfa5, #00d4b8);
+  }
+  .pb-fill.tier-mid {
+    background: linear-gradient(90deg, #f0a500, #f5c242);
+  }
+  .pb-fill.tier-low {
+    background: linear-gradient(90deg, #c4cdd5, #dce3ea);
+  }
+  .pb-score {
+    font-size: 14px;
+    font-weight: 700;
+    min-width: 44px;
+    text-align: right;
+    white-space: nowrap;
+  }
+  .pb-score.tier-high { color: #00997f; }
+  .pb-score.tier-mid { color: #c48800; }
+  .pb-score.tier-low { color: #8a96a3; }
+
+  .pb-note {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.55;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 30px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #e8e8e8;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="section-header">
+    <div class="label">Capability Mapping</div>
+    <h2>Kira Suitability by Initiative</h2>
+  </div>
+
+  <div class="suit-explainer">
+    <div class="suit-explainer-text">
+      Each initiative is scored <strong>1&ndash;10</strong> for Kira suitability. Scores reflect both Kira's <strong>capability match</strong> and the <strong>customization effort</strong> required for Arden's specific context. A score of 10/10 means Kira is ideally suited with minimal customization; lower scores indicate partial overlap or significant custom work needed.
+    </div>
+    <div class="suit-explainer-bar">
+      <div class="bar-demo"><div class="bar-demo-fill" style="width:85%"></div></div>
+      <div class="bar-demo-label">8.5 / 10 &mdash; example</div>
+    </div>
+  </div>
+
+  <div class="suit-section">
+
+    <!-- HERO MISSION 3 -->
+    <div class="suit-category">
+      <div class="suit-category-title">Hero Mission 3: AI-Empowered Academic Experience</div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">Automated Marking</div><div class="pb-phase">3.12 &middot; Phase 1 (July MVP)</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-high" style="width:100%"></div></div><div class="pb-score tier-high">10</div></div>
+        <div class="pb-note">Production grading engine with native Turnitin replacement. SITS MCP server as core deliverable. 1-month deployment.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">Course Content Design</div><div class="pb-phase">3.3 &middot; Phase 3</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-high" style="width:90%"></div></div><div class="pb-score tier-high">9</div></div>
+        <div class="pb-note">Full lifecycle: ingest, transform, align, resequence, or generate from scratch. Pedagogical transformation, not just format conversion.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">Continuous Assessment</div><div class="pb-phase">3.10 &middot; Wave 1</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-high" style="width:100%"></div></div><div class="pb-score tier-high">10</div></div>
+        <div class="pb-note">Complete lifecycle as a service: generate, deliver, score, feedback, analytics. No faculty workload increase.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">Assessment Generation</div><div class="pb-phase">3.11 &middot; Phase 3</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-high" style="width:100%"></div></div><div class="pb-score tier-high">10</div></div>
+        <div class="pb-note">Closed-loop authoring: generation &rarr; delivery &rarr; scoring &rarr; calibration. Bloom's alignment + empirical difficulty.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">Personalized Learning (AX)</div><div class="pb-phase">3.6 &middot; Phase 3</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-high" style="width:90%"></div></div><div class="pb-score tier-high">9</div></div>
+        <div class="pb-note">Kira's core product. Adaptive pacing, misconception detection, mastery-gated progression &mdash; all in production.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">AI Academic Tutoring</div><div class="pb-phase">3.9 &middot; Wave 1</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-high" style="width:90%"></div></div><div class="pb-score tier-high">9</div></div>
+        <div class="pb-note">Production AI tutor aligned to marking criteria. Formative assessment built into every interaction.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">AI in Business Faculty</div><div class="pb-phase">3.15 &middot; Wave 1</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-high" style="width:90%"></div></div><div class="pb-score tier-high">9</div></div>
+        <div class="pb-note">Kira &times; Andrew Ng discipline-specific Applied AI coursework for Business programmes.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">AI in S&amp;T Faculty</div><div class="pb-phase">3.16 &middot; Wave 1</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-high" style="width:90%"></div></div><div class="pb-score tier-high">9</div></div>
+        <div class="pb-note">Kira &times; Andrew Ng discipline-specific Applied AI coursework for Sciences &amp; Technology programmes.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">Curriculum Design</div><div class="pb-phase">3.2 &middot; Phase 3</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-high" style="width:80%"></div></div><div class="pb-score tier-high">8</div></div>
+        <div class="pb-note">Structural curriculum intelligence + rubric generation. Gap: UK HE accreditation config (QAA, OfS).</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">Academic Review &amp; Improvement</div><div class="pb-phase">3.4 &middot; Wave 1</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-high" style="width:80%"></div></div><div class="pb-score tier-high">8</div></div>
+        <div class="pb-note">Closed-loop assessment data (item difficulty, mastery rates, misconception patterns) directly powers quality review.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">Predictive Analysis (AX)</div><div class="pb-phase">3.7 &middot; Phase 2</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-high" style="width:80%"></div></div><div class="pb-score tier-high">8</div></div>
+        <div class="pb-note">Mastery-level academic signals far more predictive than engagement metrics. Complements full pipeline.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">Applied AI Strategy / AI Academy</div><div class="pb-phase">3.13&ndash;3.14 &middot; Wave 1</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-high" style="width:80%"></div></div><div class="pb-score tier-high">8</div></div>
+        <div class="pb-note">Kira &times; Andrew Ng faculty enablement content library. Training on the same tools faculty will use.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">Curriculum Research</div><div class="pb-phase">3.1 &middot; Wave 1</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-high" style="width:70%"></div></div><div class="pb-score tier-high">7</div></div>
+        <div class="pb-note">Skills coverage analysis and outcome benchmarking. Broader market intelligence needs supplemental data.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">AI Assisted Campus Delivery</div><div class="pb-phase">3.5</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-mid" style="width:40%"></div></div><div class="pb-score tier-mid">4</div></div>
+        <div class="pb-note">Campus operations outside Kira's core. Scheduling optimization would require significant custom build.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">Proactive Outreach Agent (AX)</div><div class="pb-phase">3.8</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-mid" style="width:40%"></div></div><div class="pb-score tier-mid">4</div></div>
+        <div class="pb-note">Kira provides the risk signals; outreach automation requires custom workflow build.</div>
+      </div>
+    </div>
+
+    <!-- HERO MISSION 2 -->
+    <div class="suit-category">
+      <div class="suit-category-title">Hero Mission 2: AI-Enabled Student Journey</div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">Personalized Learning</div><div class="pb-phase">2.10 &middot; Phase 3</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-high" style="width:90%"></div></div><div class="pb-score tier-high">9</div></div>
+        <div class="pb-note">Kira's core product. Replaces LearnLM prototype with production adaptive tutoring and mastery tracking.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">AI Tutoring</div><div class="pb-phase">2.11 &middot; Wave 1</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-high" style="width:90%"></div></div><div class="pb-score tier-high">9</div></div>
+        <div class="pb-note">Always-on, module-aligned tutoring with curriculum awareness and integrity guardrails.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">Self-Assessment Exercises</div><div class="pb-phase">2.12 &middot; Wave 1</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-high" style="width:90%"></div></div><div class="pb-score tier-high">9</div></div>
+        <div class="pb-note">Integrated generate-deliver-score-feedback loop. Mastery signals feed intervention triggers pre-assessment.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">Course / Path Navigator</div><div class="pb-phase">2.13 &middot; Wave 1</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-high" style="width:85%"></div></div><div class="pb-score tier-high">8.5</div></div>
+        <div class="pb-note">Kira's curriculum graph natively models prerequisites and sequencing. UX layer required.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">Predictive Analysis</div><div class="pb-phase">2.9 &middot; Phase 2</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-high" style="width:80%"></div></div><div class="pb-score tier-high">8</div></div>
+        <div class="pb-note">Enriches prediction with mastery-level signals far more granular than activity logs.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">AI Buddy (Academic Layer)</div><div class="pb-phase">2.5 &middot; Wave 1</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-mid" style="width:60%"></div></div><div class="pb-score tier-mid">6</div></div>
+        <div class="pb-note">Powers academic intelligence layer (study support, curriculum Q&amp;A). Admin/wellbeing outside scope.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">Proactive Outreach Agent</div><div class="pb-phase">2.16</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-mid" style="width:60%"></div></div><div class="pb-score tier-mid">6</div></div>
+        <div class="pb-note">Kira provides strong risk signals; outreach automation requires custom workflow build.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">Admissions &amp; Applications</div><div class="pb-phase">2.1&ndash;2.4</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-low" style="width:20%"></div></div><div class="pb-score tier-low">1&ndash;3</div></div>
+        <div class="pb-note">CRM, document processing, interview automation &mdash; admissions tech domain.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">Onboarding &amp; Community</div><div class="pb-phase">2.6&ndash;2.8</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-low" style="width:15%"></div></div><div class="pb-score tier-low">1&ndash;3</div></div>
+        <div class="pb-note">Operational workflows, community platforms, campus hardware.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">Customer Service &amp; Support</div><div class="pb-phase">2.14&ndash;2.17</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-low" style="width:15%"></div></div><div class="pb-score tier-low">1&ndash;2</div></div>
+        <div class="pb-note">Contact centre AI, sentiment analysis, support portals.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">Career &amp; Alumni</div><div class="pb-phase">2.18&ndash;2.22</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-low" style="width:15%"></div></div><div class="pb-score tier-low">1&ndash;2</div></div>
+        <div class="pb-note">Career services, CV optimization, alumni networking.</div>
+      </div>
+    </div>
+
+    <!-- DATA & INFRASTRUCTURE -->
+    <div class="suit-category">
+      <div class="suit-category-title">Data Enablement &amp; IT Infrastructure</div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">Learner Identity &amp; Activity Tracker</div><div class="pb-phase">DE.1 &middot; Infrastructure</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-high" style="width:90%"></div></div><div class="pb-score tier-high">9</div></div>
+        <div class="pb-note">Every learner interaction produces structured mastery, misconception, and progression data.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">Academic Content Repository</div><div class="pb-phase">DE.3 &middot; Infrastructure</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-high" style="width:80%"></div></div><div class="pb-score tier-high">8</div></div>
+        <div class="pb-note">Kira generates, manages, and enriches content with native outcome tagging and metadata.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">Data Lakehouse</div><div class="pb-phase">DE.6 &middot; Infrastructure</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-high" style="width:80%"></div></div><div class="pb-score tier-high">8</div></div>
+        <div class="pb-note">Kira's platform already stores and structures academic data; exposed via APIs. Arden may not need to build its own.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">Arden App</div><div class="pb-phase">IT.5 &middot; Infrastructure</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-high" style="width:80%"></div></div><div class="pb-score tier-high">8</div></div>
+        <div class="pb-note">Dedicated iOS &amp; Android apps (October 2026 launch). Included in Year 1 engagement.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">Quality &amp; Performance Analytics</div><div class="pb-phase">DE.4 &middot; Infrastructure</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-high" style="width:70%"></div></div><div class="pb-score tier-high">7</div></div>
+        <div class="pb-note">Kira provides underlying assessment and mastery data; dashboard build in collaboration with Arden.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">Mycelium KG (Student Twin)</div><div class="pb-phase">DE.2 &middot; Infrastructure</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-low" style="width:0%"></div></div><div class="pb-score tier-low">N/A</div></div>
+        <div class="pb-note">Wrong architectural approach &mdash; KG-first personalisation is structurally misguided. See &ldquo;Assessment of Existing AI Plans&rdquo; in full document.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">Academic Content KG</div><div class="pb-phase">DE.5 &middot; Infrastructure</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-low" style="width:0%"></div></div><div class="pb-score tier-low">N/A</div></div>
+        <div class="pb-note">Wrong architectural approach &mdash; see "Assessment of Existing AI Plans" in full document.</div>
+      </div>
+
+      <div class="pb-row">
+        <div class="pb-info"><div class="pb-name">Cloud, Campus, Classroom, Cyber</div><div class="pb-phase">IT.1&ndash;IT.4 &middot; Infrastructure</div></div>
+        <div class="pb-bar-wrap"><div class="pb-track"><div class="pb-fill tier-low" style="width:10%"></div></div><div class="pb-score tier-low">1</div></div>
+        <div class="pb-note">IT infrastructure entirely outside Kira's scope.</div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="footer">
+  Kira &mdash; Confidential &nbsp;|&nbsp; Prepared for Arden University &nbsp;|&nbsp; March 23, 2026
+</div>
+
+</body>
+</html>
